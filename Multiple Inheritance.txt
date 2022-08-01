@@ -1,0 +1,48 @@
+Multiple Inheritance :-  Derived class inherited from two or more base class
+
+#include<iostream>
+using namespace std;
+class Student
+{
+protected:
+    int roll;
+    string na;
+public:
+    void fun()
+    {
+        cout<<"enter roll and na"<<endl;
+        cin>>roll>>na;
+    }
+};
+class Marks
+{
+protected:
+    int a,b,c;
+public:
+    void fun1()
+    {
+        cout<<"enter a b c"<<endl;
+        cin>>a>>b>>c;
+    }
+};
+class Total:public Student,public Marks
+{
+protected:
+    int all;
+    float avg;
+public:
+    void fun2()
+    {
+        all=a+b+c;
+        avg=all/3;
+        cout<<"All= "<<all<<endl;
+        cout<<"Avg= "<<avg<<endl;
+    }
+};
+int main()
+{
+    Total t;
+    t.fun();
+    t.fun1();
+    t.fun2();
+}
