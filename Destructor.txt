@@ -1,0 +1,31 @@
+Destructor :- It is special type of function.It is used to dellocated memory and allocated constructor.
+
+#include <iostream>
+using namespace std;
+class Base {
+public:
+    Base() {
+
+        cout << " Base constructor" <<endl;
+    }
+   ~Base() {
+
+        cout <<" Base Destructor " <<endl;
+    }
+};
+
+class Derived: public Base {
+public:
+    Derived() {
+        cout <<" Derived Constructor " <<endl;
+    }
+    ~Derived(){
+        cout << " Derived Destructor "<<endl;
+    }
+
+};
+
+int main()
+{
+  Derived d;
+}
