@@ -1,0 +1,35 @@
+Multilevel Inheritance :- One class derived from another class
+
+#include <iostream>
+using namespace std;
+class Ani
+{
+    public:
+    void fun()
+    {
+        cout<<"Animal"<<endl;
+    }
+};
+class Dog:public Ani
+{
+    public:
+    void fun1()
+    {
+        cout<<"Dog"<<endl;
+    }
+};
+class Cat:public Dog
+{
+    public:
+    void fun2()
+    {
+        cout<<"Cat"<<endl;
+    }
+};
+int main()
+{
+    Cat c;
+    c.fun();
+    c.fun1();
+    c.fun2();
+}
