@@ -1,0 +1,62 @@
+Hybird Inheritance :- It is used combination of more than one type of inheritance.
+
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+protected:
+    int roll;
+    string name;
+public:
+    void fun1()
+    {
+        cout<<"enter the roll and name"<<endl;
+        cin>>roll>>name;
+    }
+};
+class Marks:public Student
+{
+protected:
+    int math,sci,geo;
+public:
+    void fun2()
+    {
+        cout<<"enter math sci and geo maeks"<<endl;
+        cin>>math>>sci>>geo;
+    }
+};
+class Sp
+{
+protected:
+    int smark;
+public:
+    void fun3()
+    {
+        cout<<"enter smark"<<endl;
+        cin>>smark;
+    }
+};
+
+class Total:public Marks,public Sp
+{
+protected:
+    int tot; float avg;
+public:
+    void fun4()
+    {
+        tot=math+sci+geo;
+        avg=tot/3;
+        cout<<"Total= "<<tot<<endl;
+        cout<<"Avg= "<<avg<<endl;
+    }
+};
+int main()
+{
+ Total t;
+ t.fun1();
+ t.fun2();
+ t.fun3();
+ t.fun4();
+}
