@@ -1,0 +1,40 @@
+Hierachial Inheritance:- Derived class derived from multiple base class
+
+#include <iostream>
+using namespace std;
+class A
+{
+public:
+    int x,y;
+    void fun()
+    {
+        cout<<"enter a and y"<<endl;
+        cin>>x>>y;
+    }
+};
+class B:public A
+{
+public:
+    void mul()
+    {
+        cout<<"x*y= "<<x*y<<endl;
+    }
+};
+class C:public A
+{
+public:
+    void add()
+    {
+        cout<<"x+y= "<<x+y<<endl;
+    }
+};
+
+int main()
+{
+   B b;
+   b.fun();
+   b.mul();
+   C c;
+   c.fun();
+   c.add();
+}
