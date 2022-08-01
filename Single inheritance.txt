@@ -1,0 +1,26 @@
+Inheritance:- Inheritance is nothing but one class access the properties of another class.
+single inheritance:- One Derived class inhereted from one base class.
+
+#include <iostream>
+using namespace std;                   
+
+class Base
+{
+public:
+    int x=10,y=20;
+};
+
+class Derived : public Base 
+{       
+    void fun() 
+    {
+        cout << " back " <<endl;
+    }
+};
+
+int main()                           
+    Derived d;
+    cout << " x= " << d.x << endl;
+    cout << " y= " << d.y << endl;
+    d.fun();
+}
