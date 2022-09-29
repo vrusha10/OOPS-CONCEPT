@@ -91,3 +91,23 @@ int main(){
     cout<<"d1 :"<<d1.var<<endl;
     cout<<"d2 :"<<d2.var<<endl;
 }
+
+Default And Parameterized
+
+#include <iostream>
+using namespace std;
+class Family {
+public:
+    Family() {
+        cout<<" default constructor "<<endl;
+    }
+    Family(int x,int y) {
+        cout<<"x+y= " <<x+y<<endl;
+    }
+};
+
+int main()
+{
+    Family f;
+    Family f1(10,20);
+}
