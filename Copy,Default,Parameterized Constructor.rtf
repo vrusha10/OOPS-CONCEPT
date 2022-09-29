@@ -1,47 +1,33 @@
  
-COPY CONSTRUCTOR:- A Copy constructor is an overloaded constructor used to declare and initialize an object from another object.\par
-Copy Constructor is of two types:
-Default Copy constructor: The compiler defines the default copy constructor. If the user defines no copy constructor, compiler supplies its constructor.
-User Defined constructor: The programmer defines the user-defined constructor.
-->Syntax Of User-defined Copy Constructor:
-Class_name(const class_name &old_object);  
+COPY CONSTRUCTOR:- A Copy constructor is an overloaded constructor used to declare and initialize an object from another object.#include <iostream>
+using namespace std;
+class Rectangle
+{
+    int len,bre;
+    public:
+    Rectangle(int x,int y)
+    {
+        len=x;
+        bre=y;
+    }
+    Rectangle(Rectangle &rect)
+    {
+        len=rect.len;
+        bre=rect.bre;
+    }
+    void fun()
+    {
+        cout<<len<<" "<<bre<<endl;
+    }
+};
 
-class copy
-{ 
-    copy(copy &x) //  copy constructor. 
- {  
-       // copyconstructor.  
-   }  
-}  
-In the above case, copy constructor can be called in the following ways:
-copy c2(c1);
-copy c2=c1;
-*/
-EXAMPLE:-1.....
-#include <iostream>  
-using namespace std; 
-class copy 
-{ 
-   public:  
-    int x;
-int y; 
-   copy(int a,int b)                // parameterized constructor.  
-    {  
-      x=a;
-y=b;  
-    }  
-    copy(copy &i)               // copy constructor  
-    { 
-        x = i.x;  
-y=i.y;
-    }  
-};  
-int main() 
-{  A a1(30,20);               // Calling the parameterized constructor.  
- A a2(a1); 
- cout<<"c1 value:"<<a1.x<<" "<<a1.y<<endl;//  Calling the copy constructor.  
- cout<<"c2 value :"<<a2.x<<" "<<a2.y<<endl;
- }    
+int main()
+{
+   Rectangle r1(10,20);
+   r1.fun();
+   Rectangle r2(r1);
+   r2.fun();
+}
 
 -> Two types of copies are produced by the constructor:
 1) Shallow copy
@@ -81,7 +67,7 @@ int main()
 
 DEEP COPY:-The mumber variables etc. for any objects have their own memory locations.
 -> Any changes in obj1 is not reflects in obj2.
-EXAMPLE:-1.........
+
 #include<iostream>
 using namespace std;
 class deep{
