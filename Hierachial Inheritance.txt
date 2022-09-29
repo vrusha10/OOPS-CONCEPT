@@ -1,4 +1,4 @@
-Hierachial Inheritance:- Derived class derived from multiple base class
+Hierachial Inheritance:- Multiple derived class inherited from one base class
 
 #include <iostream>
 using namespace std;
