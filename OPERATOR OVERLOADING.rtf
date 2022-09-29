@@ -7,89 +7,65 @@ Sizeof\
 member selector(.)
 member pointer selector(*)
 ternary operator(?:)
-SYNTAX:return_type class_name  : : operator op(argument_list)  \
-{  
-     // body of the function.  
-} 
+Unary operator
+
 #include<iostream>
 using namespace std;
-#include <iostream>   
-using namespace std;    
-class unary   
-{    
-   private:    
-      int num;   
-   public:   
-       unary(int x) {
-           num=x;
-       }  
-       void operator ++(){   
-          num = num+2;     
-       }    
-       void Print() {     
-           cout<<"The Count is: "<<num;     
-       }    
-};    
-int main()   
-{    
-    unary u(10);    
-    ++u;  // calling of a function "void operator ++()"    
-    u.Print();   
-}    
+class Unary
+{
+    int x;
+public:
+    Unary ()
+{
+        x=3;
+    }
+    void operator ++()
+{
+        ++x;
+    }
+    void print ()
+{
+        cout << x << endl;
+    }
+};
+int main()
+{
+    Unary u;
+    ++u;
+    u.print();
+}
 
-EXAMPLE:-2.....
+
+
+/* Binary Operator */
+
 #include<iostream>
 using namespace std;
-#include <iostream>    
-using namespace std;   
-class unary   {    
-   private:    
-      int num;   
-   public:    
-       unary(int x) {
-           num=x;
-       }  
-       void operator --()        {     
-          num = num-2;     
-       }    
-       void Print() {     
-           cout<<"The Count is: "<<num;     
-       }    
-       };
-int main()    
-{    
-    unary u(10);    
-    --u;  // calling of a function "void operator ++()"    
-    u.Print();    
-    return 0;  
-}   
-
-BINARY OPERATOR OVERLOADING:This operator can be used in perform the peration between user defined data types
-#include <iostream>  
-using namespace std;  
 class Binary
-{  
-    
-    int x;  
-      public:  
-      Binary(){}  
-    Binary(int i)  
-    {  
-       x=i;  
-    }  
-    void operator+(Binary);  
-    void display(); 
-}; 
-  
-void Binary :: operator+(Binary a)  
-{ 
-    int m = x+a.x;  
-    cout<<"The result of the addition of two objects is : "<<m; 
-}  
-int main()  
-{  
-    Binary a1(5);  
-    Binary a2(4); 
-    a1+a2;  
-    return 0;  
+{
+    int x,y;
+public:
+    Binary (int m=0,int n=0)
+    {
+        x=m;
+        y=n;
+    }
+    Binary operator +(Binary const &obj)
+    {
+        Binary t;
+        t.x = x + obj.x;
+        t.y = y + obj.y;
+        return t;
+    }
+    void print()
+    {
+        cout << "X= " <<x<<" Y= "<<y<<endl;
+    }
+
+};
+int main()
+{
+    Binary b1(1,2),b2(4,5),b3;
+    b3=b1+b2;
+    b3.print();
 } 
